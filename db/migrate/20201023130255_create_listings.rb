@@ -1,6 +1,7 @@
 class CreateListings < ActiveRecord::Migration[6.0]
   def change
     create_table :listings do |t|
+      t.belongs_to :owner, index: true
       t.integer :available_beds
       t.integer :price
       t.text :description
